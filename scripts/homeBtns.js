@@ -34,7 +34,7 @@ function makeButtons(){
     var len = btnNames.length;
     var wid = breakPoints(); // How many buttons per row/ should take the screen width and decide. Not sure how this looks yet
     var hei = Math.ceil(len / wid); // Rows
-    var out = "";
+    var out = "<h1>Projects</h1>";
     var int = -1;
     for (i=0;i<hei;i++){ // New Row
             out += "<div class='links'>";
