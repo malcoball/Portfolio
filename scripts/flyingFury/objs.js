@@ -1,11 +1,12 @@
 const Objects = []
 // Make generic obj
 class object {
-    constructor(x, y, xSpd, ySpd, angle, size, dmg, health,spr,player) {
+    constructor(x, y, xSpd, ySpd,Spd, angle, size, dmg, health,spr,player) {
         this.x = x,
         this.y = y,
         this.xSpd = xSpd,
         this.ySpd = ySpd,
+        this.Spd = Spd, // Max speed
         this.angle = angle,
         this.size = size,
         this.dmg = dmg,
@@ -24,21 +25,60 @@ class object {
     }
     step(){
         if (this.player == true){// Only fires if the object is controlled by the player
-            if (keypress == "w"){
-                this.y -= this.ySpd;
+            // Acceleration
+            if (keypress[0] == true){ // Up
+                if (this.ySpd > -this.Spd){
+                    this.ySpd --;
+                }
             } else
-            if (keypress == "s"){
-                this.y += this.ySpd;
+            if (keypress[1] == true){ // Down
+                if (this.ySpd < this.Spd){
+                    this.ySpd ++;
+                }
             }
-            if (keypress == "a"){
-                this.x -= this.xSpd;
+            if (keypress[2] == true){ // Left
+                if (this.xSpd > -this.Spd){
+                    this.xSpd --;
+                }
             } else
-            if (keypress == "d"){
-                this.x += this.xSpd;
+            if (keypress[3] == true){ // Right
+                if (this.xSpd < this.Spd){
+                    this.xSpd ++;
+                }
             } 
+
+            // Decceleration
+            if (keypress[0] == false) { // Up
+                if (this.ySpd < 0){
+                    this.ySpd ++;
+                } 
+            }
+
+            if (keypress[1] == false){ // Down
+                if (this.ySpd > 0){
+                    this.ySpd --;
+                }
+            }
+
+            if (keypress[2] == false) { // Up
+                if (this.xSpd < 0){
+                    this.xSpd ++;
+                } 
+            }
+
+            if (keypress[3] == false){ // Down
+                if (this.xSpd > 0){
+                    this.xSpd --;
+                }
+            }
+            if (this.y > canvas.height+64) this.y = -32;
+            if (this.y < -64) this.y = canvas.height+32;
+            this.x += this.xSpd;
+            this.y += this.ySpd;
         }
     }
 
 }
 
-new object(20,20,2,2,0,64,1,1,sPl00,true); // Player object
+
+new object(20,20,0,0,6,0,64,1,1,sPl00,true); // Player object
