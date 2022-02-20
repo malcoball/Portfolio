@@ -32,8 +32,8 @@ class Circle {
         this.y = y;
         this.col = col;
         this.rad = Rad;
-        this.xSpd = random(8)-4;
-        this.ySpd = random(8)-4;
+        this.xSpd = random(4)-2;
+        this.ySpd = random(4)-2;
         switch(col){
             case Green : this.dCol = DGreen; break;
             case Blue  : this.dCol = DBlue; break;
@@ -154,13 +154,15 @@ window.addEventListener("scroll",function(event){
 })
 
 //Draw to
-
-setInterval(()=>{
+function init(){
     if (play == true){
-    drawTo();
-    motion();
-    }
-},1000/30);
+        drawTo();
+        motion();
+        }
+    requestAnimationFrame(init);
+}
+
+init();
 
 
 

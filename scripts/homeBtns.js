@@ -2,7 +2,7 @@
 const target = document.querySelector("#projects");
 const title = "<h1>Projects</h1>";
 const btnNames = [
-    "Game","Virtual Keyboard","Weather App","Dynamic Landing","Twitter Clone",
+    "Flying Fury JS","Virtual Keyboard","Weather App","Dynamic Landing","Twitter Clone",
     "Content Management","Image Gallery","Alarm Clock","Tab Generator","Dynamic to-do list"
 ];
 let screenSize = breakPoints(); // How wide the screen is
@@ -52,10 +52,23 @@ function makeButtons(){
         target.innerHTML += out;
 }
 
+function addLink(){
+    const domTarget = document.querySelectorAll("button");
+    for (i=0;i<10;i++){
+        let tar = domTarget[i];
+        tar.addEventListener("click",()=>{
+            switch(tar.innerHTML){
+                case "Flying Fury JS": window.location.href="flyingFury.html"; break;
+                default : alert("button not set!"); break;
+            }
+        })
+    }
+}
 
 function refresh(){
     resetTarget();
     makeButtons();
+    addLink();
 }
 window.addEventListener("resize",()=>{
     let temp = breakPoints();
@@ -63,8 +76,5 @@ window.addEventListener("resize",()=>{
         screenSize = temp;
         makeButtons();
     }
-})
-document.querySelector("button").addEventListener("click",()=>{
-    refresh();
 })
 refresh();

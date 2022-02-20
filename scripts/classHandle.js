@@ -1,5 +1,5 @@
 
-
+// Only works when desktop due to different screen sizes, must fix
 document.addEventListener("scroll",()=>{
 // DOM elements
 const btnTarget = document.querySelectorAll(".links");

@@ -1,0 +1,55 @@
+html{
+    padding: none;
+    margin: none;
+    max-width:100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+body{
+    background-color: #553030;
+}
+
+#canvasCont{
+    width: 100%;
+}
+canvas{
+    position: absolute;
+    background-color: #C1E5F5;
+    top: 100px;
+    left: 500px;
+}
+#title{
+    display:flex;
+    width:100%;
+    margin:auto;
+    justify-content: center;
+}
+#flex1{
+    display:flex;
+    justify-content: space-between;
+    width: 90%;
+    margin:auto;
+}
+#hiScore{
+    font-size: 3rem;
+}
+#controls{
+    position: relative;
+    font-size: 3rem;
+    text-align: end;
+    bottom: 125px;
+}
+#score{
+    text-align: center;
+    display:flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    width:100%;
+}
+a{
+    position:fixed;
+    top:0;
+    left: 0;
+    color: white;
+}
