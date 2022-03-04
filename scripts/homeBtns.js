@@ -76,6 +76,7 @@ function addLink(){
                 case "Flying Fury JS": window.location.href="flyingFury.html"; break;
                 case "Dynamic to-do list": window.location.href="https://malcoball.github.io/todoList/"; break;
                 case "Alarm Clock": window.location.href="https://malcoball.github.io/alarmClock/"; break;
+                case "Tab Generator": window.location.href="https://malcoball.github.io/tabGenerator/"; break;
                 default : alert("button not set!"); break;
             }
         })
