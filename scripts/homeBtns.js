@@ -2,10 +2,22 @@
 const target = document.querySelector("#projects");
 const title = "<h1>Projects</h1>";
 const btnNames = [
-    "Flying Fury JS","Virtual Keyboard","Weather App","Dynamic Landing","Twitter Clone",
-    "Content Management","Image Gallery","Alarm Clock","Tab Generator","Dynamic to-do list"
-];
+    "Flying Fury JS","Alarm Clock","Tab Generator","Bootstrap Site","Dynamic to-do list","Virtual Keyboard","Weather App","Dynamic Landing"
+    ,"Twitter Clone","Content Management","Image Gallery"];
+    
 let screenSize = breakPoints(); // How wide the screen is
+
+function btnClass(name){
+    switch(name){
+        case "Flying Fury JS":
+        case "Alarm Clock":
+        case "Tab Generator":
+        case "Dynamic to-do list":
+            return " btnProg"; // in progress
+
+        default: return " btnNone"; // no progress
+    }
+}
 
 function resetTarget(){
     target.innerHTML = title;
@@ -36,12 +48,15 @@ function makeButtons(){
     var hei = Math.ceil(len / wid); // Rows
     var out = "<h1>Projects</h1>";
     var int = -1;
+    let className = "";
     for (i=0;i<hei;i++){ // New Row
             out += "<div class='links'>";
             for(j=0;j<wid;j++){ // Items on row
                 int ++;
                 if (btnNames[int] != undefined){
-                    out += `<button class="linkBtn">${btnNames[int]}</button>`;
+                    className = btnClass(btnNames[int]);
+
+                    out += `<button class="linkBtn ${className}">${btnNames[int]}</button>`;
                     if ((j != wid-1) && (int != len-1)){
                         out += "<span class='vr'></span>";
                     }
@@ -59,11 +74,15 @@ function addLink(){
         tar.addEventListener("click",()=>{
             switch(tar.innerHTML){
                 case "Flying Fury JS": window.location.href="flyingFury.html"; break;
+                case "Dynamic to-do list": window.location.href="https://malcoball.github.io/todoList/"; break;
+                case "Alarm Clock": window.location.href="https://malcoball.github.io/alarmClock/"; break;
                 default : alert("button not set!"); break;
             }
         })
     }
 }
+
+
 
 function refresh(){
     resetTarget();

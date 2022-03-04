@@ -17,6 +17,7 @@ canvas{
     background-color: #C1E5F5;
     top: 100px;
     left: 500px;
+    cursor: crosshair;
 }
 #title{
     display:flex;
