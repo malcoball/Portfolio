@@ -2,7 +2,7 @@
 const target = document.querySelector("#projects");
 const title = "<h1>Projects</h1>";
 const btnNames = [
-    "Flying Fury JS","Alarm Clock","Tab Generator","Bootstrap Site","Dynamic to-do list","Virtual Keyboard","Weather App","Dynamic Landing"
+    "Dynamic to-do list","Flying Fury JS","Alarm Clock","Tab Generator","Bootstrap Site","Virtual Keyboard","Weather App","Dynamic Landing"
     ,"Twitter Clone","Content Management","Image Gallery"];
     
 let screenSize = breakPoints(); // How wide the screen is
